@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env
+.env.local
+data/firebase-config.local.json
+data/admin-credentials.local.json
+data/firebase-service-account.local.json
+.DS_Store
