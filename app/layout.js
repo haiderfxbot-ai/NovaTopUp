@@ -1,4 +1,5 @@
 import "./globals.css";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 export const metadata = {
   title: "NovaTopUp — Instant Game & Social Top-Ups",
@@ -16,7 +17,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="font-body antialiased">{children}</body>
+      <body className="font-body antialiased pb-16 md:pb-0">
+        {children}
+        <MobileBottomNav />
+      </body>
     </html>
   );
 }
