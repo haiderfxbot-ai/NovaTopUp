@@ -5,7 +5,8 @@ import { CheckCircle2 } from "lucide-react";
 
 const FIELDS = [
   { key: "serviceId", label: "EmailJS Service ID" },
-  { key: "templateId", label: "EmailJS Template ID" },
+  { key: "otpTemplateId", label: "Sign-up OTP Template ID" },
+  { key: "resetTemplateId", label: "Password Reset Template ID" },
   { key: "publicKey", label: "EmailJS Public Key" },
   { key: "privateKey", label: "EmailJS Private Key" },
 ];
@@ -42,10 +43,10 @@ export default function EmailSettings() {
     <div>
       <h2 className="font-display text-lg font-600 text-white">Email OTP (EmailJS)</h2>
       <p className="mt-1 text-sm text-white/50">
-        Create a free account at emailjs.com, connect your email, and make one template with
-        two variables: <code className="text-white/70">{"{{to_email}}"}</code> and{" "}
-        <code className="text-white/70">{"{{otp_code}}"}</code>. Paste the four values below —
-        used for both sign-up verification and forgot-password codes.
+        Create a free account at emailjs.com, connect your email, and make <strong>two</strong>{" "}
+        templates (sign-up verification + password reset), each with two variables:{" "}
+        <code className="text-white/70">{"{{to_email}}"}</code> and{" "}
+        <code className="text-white/70">{"{{otp_code}}"}</code>. Paste the five values below.
       </p>
 
       <form onSubmit={handleSave} className="mt-4 space-y-3">

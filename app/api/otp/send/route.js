@@ -30,7 +30,7 @@ export async function POST(request) {
     }
 
     const code = await createOtp(email, purpose);
-    await sendOtpEmail(email, code);
+    await sendOtpEmail(email, code, purpose);
     return NextResponse.json({ ok: true });
   } catch (err) {
     return NextResponse.json({ error: err.message }, { status: 400 });

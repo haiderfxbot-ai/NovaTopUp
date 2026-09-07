@@ -122,11 +122,16 @@ profile directly from the client right after signup.
 1. Create a free account at [emailjs.com](https://www.emailjs.com).
 2. Connect an email service (Gmail, Outlook, or any SMTP inbox) — this
    is done once, inside EmailJS's own dashboard.
-3. Create one email template with two variables in the body/subject:
-   `{{to_email}}` and `{{otp_code}}`.
-4. Copy the **Service ID**, **Template ID**, **Public Key**, and
+3. Create **two** email templates, each with two variables in the
+   body/subject: `{{to_email}}` and `{{otp_code}}`.
+   - One for sign-up verification
+   - One for password reset
+4. Copy the **Service ID**, both **Template IDs**, **Public Key**, and
    **Private Key** from EmailJS → paste them into
-   `/admin-x7k9-panel/dashboard/settings` → **Email OTP** tab.
+   `/admin-x7k9-panel/dashboard/settings` → **Email OTP** tab (or set
+   `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID_OTP`,
+   `EMAILJS_TEMPLATE_ID_RESET`, `EMAILJS_PUBLIC_KEY`,
+   `EMAILJS_PRIVATE_KEY` as Vercel environment variables).
 
 Once saved, sign-up sends a 6-digit code before the account is created,
 and "Forgot password" (accepts email or username) sends a code before
